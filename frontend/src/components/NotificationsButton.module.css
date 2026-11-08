@@ -1,0 +1,59 @@
+.notifications { position: relative; }
+.notifications__trigger { width: 48px; height: 48px; border: 1px solid var(--border); border-radius: 13px; background: rgba(252,252,255,.72); color: var(--text-primary); display: grid; place-items: center; position: relative; cursor: pointer; }
+.notifications__trigger:hover { border-color: var(--accent); color: var(--accent); }
+.notifications__trigger svg { width: 20px; height: 20px; stroke-width: 1.7; }
+.notifications__trigger > span { position: absolute; top: 5px; right: 5px; min-width: 7px; width: 7px; height: 7px; padding: 0; overflow: hidden; border-radius: 50%; background: var(--accent); color: transparent; border: 0; font-size: 0; display: block; }
+.notifications__panel { position: absolute; z-index: 80; top: calc(100% + 10px); right: 0; width: min(390px, calc(100vw - 28px)); max-height: min(620px, calc(100vh - 100px)); overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: var(--bg-elevated); box-shadow: 0 20px 60px color-mix(in srgb, var(--shadow-color) 18.0%, transparent); }
+.notifications__panel > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 18px 14px; border-bottom: 1px solid var(--border); }
+.notifications__panel h2 { margin: 0; font-size: 1rem; }
+.notifications__panel header p { margin: 4px 0 0; color: var(--text-secondary); font-size: .78rem; }
+.notifications__panel header button { border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; padding: 2px; }
+.notifications__panel header button svg { width: 18px; height: 18px; }
+.notifications__list { max-height: 520px; overflow: auto; padding: 10px; }
+.notifications__list article { padding: 13px; border: 1px solid var(--border); border-radius: 13px; margin-bottom: 8px; background: var(--bg-elevated); }
+.notifications__list article:last-child { margin-bottom: 0; }
+.notifications__list .notifications__unread { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: color-mix(in srgb, var(--accent) 5%, var(--bg-elevated)); }
+.notifications__list article > div { display: flex; justify-content: space-between; gap: 12px; }
+.notifications__list strong { font-size: .84rem; }
+.notifications__list time { white-space: nowrap; color: var(--text-secondary); font-size: .68rem; }
+.notifications__list article > p { margin: 7px 0 10px; color: var(--text-secondary); font-size: .78rem; line-height: 1.45; }
+.notifications__list a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; color: var(--text-primary); text-decoration: none; font-size: .77rem; border-top: 1px solid var(--border); }
+.notifications__list a:hover { color: var(--accent); }
+.notifications__list a svg { width: 14px; height: 14px; flex: 0 0 auto; }
+.notifications__event { align-items: center; border-top: 1px solid var(--border); color: var(--text-primary); display: flex; font-size: .77rem; gap: 8px; padding: 8px 0; }
+.notifications__event svg { color: var(--accent); flex: 0 0 auto; height: 14px; width: 14px; }
+.notifications__list footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 9px; }
+.notifications__list footer button { border: 0; background: transparent; color: var(--text-secondary); font-size: .72rem; display: flex; align-items: center; gap: 4px; cursor: pointer; }
+.notifications__list footer button:hover { color: var(--accent); }
+.notifications__list footer button svg { width: 13px; height: 13px; }
+.notifications__state,.notifications__error { margin: 0; padding: 28px 16px; text-align: center; color: var(--text-secondary); font-size: .82rem; }
+.notifications__more { display: block; width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-elevated); color: var(--text-primary); cursor: pointer; }
+.notifications__more:disabled { cursor: default; opacity: .6; }
+.notifications__error { color: var(--danger); }
+@media (max-width: 600px) { .notifications__panel { position: fixed; top: 68px; right: 14px; left: 14px; width: auto; } }
+
+.notifications__panel>header { padding: var(--space-5); }
+.notifications__panel h2 { font-size: var(--text-lg); line-height: var(--leading-heading); }
+.notifications__panel header p { font-size: var(--text-sm); line-height: var(--leading-body); }
+.notifications__list { padding: var(--space-3); }
+.notifications__list article { padding: var(--space-4); }
+.notifications__list strong { font-size: var(--text-base); }
+.notifications__list article>p,.notifications__list a,.notifications__event,.notifications__state,.notifications__error { font-size: var(--text-sm); line-height: var(--leading-body); }
+.notifications__list a,.notifications__event { min-height: var(--control-sm); }
+
+.notifications__memorySection { display: flex; flex-direction: column; width: 100%; }
+.notifications__actionCard { margin-top: 8px; padding: 10px; border-radius: 10px; background: color-mix(in srgb, var(--accent-soft) 6.0%, transparent); border: 1px dashed color-mix(in srgb, var(--accent) 40%, var(--border)); display: flex; flex-direction: column; gap: 8px; }
+.notifications__actionTime { display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.78rem; color: var(--text-primary); }
+.notifications__actionTime svg { width: 14px; height: 14px; color: var(--accent); }
+.notifications__actionLoc { font-size: 0.74rem; color: var(--text-secondary); }
+.notifications__actionCitations { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.notifications__actionCitation { font-size: 0.68rem; padding: 2px 6px; border-radius: 6px; background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-secondary); }
+.notifications__confirmBtn { border: 0; background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 6px 12px; font-size: 0.76rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; align-self: flex-start; transition: opacity .2s; }
+.notifications__confirmBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.notifications__actionSuccess { font-size: 0.74rem; color: #10b981; font-weight: 500; display: flex; align-items: center; gap: 4px; padding: 4px 0; }
+.notifications__actionSuccess svg { width: 14px; height: 14px; }
+.notifications__actionDowngraded { font-size: 0.72rem; color: #f59e0b; font-weight: 500; display: flex; align-items: center; gap: 4px; padding: 4px 0; border-top: 1px dashed var(--border); margin-top: 4px; }
+
+
+/* Notification trigger remains a surface rather than a translucent white tile. */
+:global(html[data-theme="dark"]) .notifications__trigger { background: var(--surface-elevated); border-color: var(--border-strong); }

@@ -1,0 +1,249 @@
+@import "@fontsource-variable/science-gothic/wght.css";
+@import "@fontsource-variable/nunito-sans/wght.css";
+:root {
+  --font-ui: "Nunito Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: "Science Gothic Variable", ui-sans-serif, system-ui, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
+  --leading-heading: 1.22;
+  --leading-ui: 1.38;
+  --leading-body: 1.55;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --control-sm: 2.25rem;
+  --control-md: 2.625rem;
+  --control-lg: 2.75rem;
+  --card-padding: 1.25rem;
+  --panel-padding: 1.5rem;
+  --ink: #101012;
+  --accent: #545fdd;
+  --accent-hover: #444bc7;
+  --accent-soft: #eef0ff;
+  --on-accent: #ffffff;
+  --danger: #b42318;
+  --danger-solid: #b42318;
+  --on-danger: #ffffff;
+  --danger-soft: #fff0ee;
+  --shadow-color: #10131a;
+  --muted: #69758b;
+  --border: #e6e9f1;
+  --sidebar: 18%;
+  --context: 22.15%;
+  --radius: 0.6rem;
+  font-size: 16px;
+  color-scheme: light;
+  --bg-app: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f5f9;
+  --bg-elevated: #ffffff;
+  --bg-hover: #f4f4f7;
+  --text-primary: #101012;
+  --text-secondary: #59657b;
+  --text-muted: #69758b;
+  --border-subtle: #e6e9f1;
+  --bg-sidebar: #10131a;
+  --bg-main: #f8f9fc;
+  --surface: rgba(250, 250, 253, 0.82);
+  --surface-active: #ffffff;
+  --accent-secondary: #6974e8;
+}
+
+html[data-theme="dark"] {
+  --accent: #a5adff;
+  --accent-hover: #bbc0ff;
+  --accent-soft: #242b4b;
+  --on-accent: #10131a;
+  --danger: #ff9b91;
+  --danger-soft: #361c1b;
+  --bg-main: #0e1218;
+  --bg-sidebar: #10131a;
+  --ink: #f2f4f7;
+  --muted: #8994a3;
+  --border: #2a323e;
+  --bg-app: #0a0d12;
+  --bg-primary: #0e1218;
+  --bg-secondary: #12171f;
+  --bg-elevated: #171d26;
+  --bg-hover: #1a212b;
+  --text-primary: #f2f4f7;
+  --text-secondary: #a6afbc;
+  --text-muted: #a0aaba;
+  --border-subtle: #202732;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg-app);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--focus-ring, var(--accent));
+  outline-offset: 3px;
+}
+button {
+  background: none;
+  border: 0;
+}
+svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 1.6;
+  flex-shrink: 0;
+}
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+textarea {
+  resize: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+dialog {
+  color: var(--ink);
+}
+
+@media (max-width: 1250px) {
+  :root {
+    --sidebar: 19%;
+    --context: 25%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Semantic roles extend the existing palette without changing light geometry. */
+:root {
+  --background: var(--bg-main);
+  --surface-elevated: var(--bg-elevated);
+  --surface-hover: var(--bg-hover);
+  --foreground: var(--text-primary);
+  --foreground-muted: var(--text-secondary);
+  --border-strong: #7a869c;
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --primary-foreground: var(--on-accent);
+  --focus-ring: var(--accent);
+  --success: #176944;
+  --success-soft: #e3f7ee;
+  --warning: #825d00;
+  --warning-soft: #fff6dd;
+  --overlay: rgba(16, 19, 26, .42);
+  --shadow: 0 16px 48px rgba(16, 19, 26, .16);
+  --chart-1: var(--accent);
+  --chart-2: #8690ed;
+  --chart-3: #b5bbee;
+}
+
+html[data-theme="dark"] {
+  --background: #111827;
+  --surface: #1b2433;
+  --surface-elevated: #243145;
+  --surface-hover: #2c3a50;
+  --foreground: #e8edf5;
+  --foreground-muted: #cbd5e1;
+  --border: #3c4b62;
+  --border-strong: #718198;
+  --primary: #929bff;
+  --primary-hover: #9ea6ff;
+  --primary-foreground: #0d111a;
+  --focus-ring: #bbc1ff;
+  --success: #7de0aa;
+  --success-soft: #1b3b2e;
+  --warning: #f4c76a;
+  --warning-soft: #3d3220;
+  --danger: #ff9b91;
+  --danger-soft: #392522;
+  --overlay: rgba(0, 0, 0, .68);
+  --shadow: 0 18px 56px rgba(0, 0, 0, .45);
+  --shadow-color: #000000;
+  --accent: var(--primary);
+  --accent-hover: var(--primary-hover);
+  --accent-soft: #293259;
+  --accent-secondary: #a4abff;
+  --on-accent: var(--primary-foreground);
+  --bg-app: var(--background);
+  --bg-main: var(--background);
+  --bg-sidebar: #0d111a;
+  --bg-primary: var(--surface);
+  --bg-secondary: #172132;
+  --bg-elevated: var(--surface-elevated);
+  --bg-hover: var(--surface-hover);
+  --surface-active: var(--surface-elevated);
+  --ink: var(--foreground);
+  --text-primary: var(--foreground);
+  --text-secondary: var(--foreground-muted);
+  --text-muted: #adbbd0;
+  --muted: var(--foreground-muted);
+  --border-subtle: var(--border);
+  --chart-1: var(--primary);
+  --chart-2: #68d8c7;
+  --chart-3: #f4c76a;
+  color-scheme: dark;
+  scrollbar-color: var(--border-strong) var(--background);
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color: var(--foreground-muted); opacity: 1; }
+html[data-theme="dark"] :is(input, textarea, select, [aria-haspopup="listbox"]) { accent-color: var(--primary); border-color: var(--border-strong); }
+html[data-theme="dark"] :is(input, textarea, select) { color: var(--foreground); background-color: var(--surface); }
+::selection { color: var(--on-accent); background: var(--accent); }
+
+/* Form hints and boundaries remain identifiable in either palette. */
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder { color: var(--foreground-muted); opacity: 1; }
+html[data-theme="light"] :is(input, textarea, select, [aria-haspopup="listbox"]) { border-color: var(--border-strong); }

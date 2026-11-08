@@ -1,0 +1,25 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies, builds and caches
+node_modules/
+.next*/
+out/
+dist/
+*.tsbuildinfo
+
+# Generated QA evidence
+artifacts/
+screenshots/
+test-results/
+playwright-report/
+coverage/
+*.log
+
+# Editor and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

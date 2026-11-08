@@ -1,0 +1,323 @@
+.mail {
+  position: relative;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 1.6rem 1.8rem 2rem;
+  overflow-y: auto;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.header > div { flex: 1; }
+.inboxLink { padding: .55rem .8rem; border: 1px solid var(--border-subtle); border-radius: .55rem; background: var(--bg-elevated); font-size: var(--text-sm); }
+.inboxLink:hover { background: var(--bg-hover); }
+.loading { display: flex; align-items: center; gap: .5rem; color: var(--text-secondary); font-size: var(--text-sm); }
+.loading svg { width: 1rem; height: 1rem; }
+.authFallback { display: flex; align-items: center; gap: .7rem; width: fit-content; margin: 1rem auto; padding: .6rem .8rem; border: 1px solid var(--border-subtle); border-radius: .55rem; font-size: var(--text-sm); }
+.authFallback a { color: var(--accent); text-decoration: underline; }
+
+.header h1 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-heading);
+}
+
+.header p {
+  margin-top: .2rem;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-ui);
+}
+
+.mobileMenu {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: .85rem;
+  background: var(--bg-elevated);
+}
+
+.connectView {
+  width: 100%;
+  margin-top: clamp(4.25rem, 9vh, 7rem);
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro > svg {
+  width: 4rem;
+  height: 4rem;
+  color: #101744;
+  stroke-width: 1.45;
+}
+
+.intro h2 {
+  margin-top: 1.15rem;
+  color: #10142f;
+  font-size: 1.72rem;
+  font-weight: 700;
+  line-height: var(--leading-heading);
+}
+
+.intro p {
+  margin-top: .7rem;
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: 1.45;
+}
+
+.providerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .8rem;
+  width: 100%;
+  max-width: 74rem;
+  margin: 2.1rem auto 0;
+}
+
+.providerCard {
+  display: flex;
+  min-width: 0;
+  min-height: 12rem;
+  padding: 1.2rem 1.35rem 1.15rem;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #e2e5ef;
+  border-radius: .75rem;
+  background: var(--bg-elevated);
+}
+
+.providerLogoSlot {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: .7rem;
+  place-items: center;
+}
+
+.providerLogoSlot img {
+  display: block;
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.roundedLogo {
+  border-radius: .55rem;
+}
+
+.providerCard h3 {
+  overflow: hidden;
+  max-width: 100%;
+  color: #17172e;
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: var(--leading-ui);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.providerCard p {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: .3rem;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-ui);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.providerCard > button {
+  display: inline-flex;
+  width: 100%;
+  min-height: var(--control-sm);
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe2ee;
+  border-radius: .9rem;
+  background: var(--bg-elevated);
+  font-size: var(--text-sm);
+  transition: border-color .18s ease, background .18s ease;
+}
+
+.providerCard > button:hover:not(:disabled) {
+  border-color: #c8c9d8;
+  background: var(--bg-hover);
+}
+
+.providerCard > button svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: .35rem;
+}
+
+.primaryArea {
+  display: grid;
+  justify-items: center;
+  margin-top: 1.85rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  width: min(17rem, 100%);
+  min-height: var(--control-lg);
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  border-radius: 1rem;
+  color: var(--on-accent);
+  background: var(--accent);
+  font-size: var(--text-sm);
+  transition: background .18s ease, transform .18s ease;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.primaryButton svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.primaryArea p {
+  margin-top: .75rem;
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+}
+
+.error {
+  display: flex;
+  width: min(44rem, 100%);
+  min-height: 2.75rem;
+  margin: 1.1rem auto 0;
+  padding: .65rem .8rem;
+  align-items: center;
+  gap: .55rem;
+  border: 1px solid var(--danger);
+  border-radius: .9rem;
+  color: var(--danger);
+  background: var(--danger-soft);
+  font-size: var(--text-sm);
+}
+
+.error > svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.error span { flex: 1; }
+.error button { display: grid; padding: .25rem; place-items: center; }
+.error button svg { width: 1rem; height: 1rem; }
+
+.connected {
+  display: flex;
+  width: min(42rem, 100%);
+  margin: 2rem auto 0;
+  padding: 1.25rem;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: .75rem;
+  background: var(--bg-elevated);
+}
+
+.connected > svg { color: var(--accent); }
+.connected h2 { font-size: var(--text-md); }
+.connected p { margin-top: .35rem; color: var(--text-secondary); font-size: var(--text-sm); }
+
+.dialogBackdrop {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: grid;
+  padding: 1rem;
+  place-items: center;
+  background: color-mix(in srgb, var(--bg-secondary) 40.0%, transparent);
+}
+
+.providerDialog {
+  width: min(27rem, 100%);
+  padding: 1.15rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  background: var(--bg-elevated);
+  box-shadow: 0 1.3rem 3.5rem #11102226;
+}
+
+.dialogHeader { display: flex; align-items: center; justify-content: space-between; }
+.dialogHeader h2 { font-size: var(--text-lg); }
+.dialogHeader button { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; border-radius: .8rem; }
+.dialogHeader button:hover { background: var(--bg-hover); }
+.dialogHeader svg { width: 1.15rem; height: 1.15rem; }
+.dialogProviders { display: grid; gap: .45rem; margin-top: 1rem; }
+.dialogProviders > button { display: flex; min-height: 3.8rem; padding: .65rem .75rem; align-items: center; gap: .8rem; border: 1px solid var(--border-subtle); border-radius: .9rem; text-align: left; }
+.dialogProviders > button:hover { background: var(--bg-hover); }
+.dialogLogoSlot { display: grid; width: 2.5rem; height: 2.5rem; flex: 0 0 2.5rem; place-items: center; }
+.dialogLogoSlot img { display: block; width: 2.5rem; height: 2.5rem; object-fit: contain; }
+.dialogProviders span { display: grid; gap: .05rem; }
+.dialogProviders strong { font-size: var(--text-sm); }
+.dialogProviders small { color: var(--text-secondary); font-size: var(--text-xs); }
+
+.toast {
+  position: fixed;
+  z-index: 90;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: .8rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: .9rem;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  box-shadow: 0 .8rem 2rem #10101c1c;
+  font-size: var(--text-sm);
+}
+
+.spinner { animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+:global(html[data-theme="dark"]) .intro > svg,
+:global(html[data-theme="dark"]) .intro h2,
+:global(html[data-theme="dark"]) .providerCard h3 { color: var(--text-primary); }
+:global(html[data-theme="dark"]) .providerCard { border-color: var(--border-subtle); }
+:global(html[data-theme="dark"]) .providerCard > button { border-color: var(--border-subtle); }
+:global(html[data-theme="dark"]) .error { border-color: var(--danger); color: var(--danger); background: var(--danger-soft); }
+
+@media (max-width: 1120px) {
+  .providerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 40rem; }
+  .connectView { margin-top: 3rem; }
+}
+
+@media (max-width: 1000px) {
+  .mobileMenu { display: grid; }
+}
+
+@media (max-width: 620px) {
+  .mail { padding: 1rem; }
+  .header h1 { font-size: var(--text-xl); }
+  .connectView { margin-top: 2.5rem; }
+  .intro > svg { width: 3.4rem; height: 3.4rem; }
+  .intro h2 { font-size: 1.4rem; }
+  .intro p br { display: none; }
+  .providerGrid { grid-template-columns: 1fr; }
+  .providerCard { min-height: 11.5rem; }
+  .toast { right: 1rem; bottom: 1rem; }
+}
+
+@media (max-width: 1000px) { .mobileMenu { display: inline-grid; place-items: center; min-width: 40px; min-height: 40px; } }
+
+.providerDialog { max-height: calc(100dvh - 2rem); overflow-y: auto; }
